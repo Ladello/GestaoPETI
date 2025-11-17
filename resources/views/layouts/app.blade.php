@@ -19,7 +19,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container">
 
-        <a class="navbar-brand" href="{{ route('projects.index') }}">Painel PETI</a>
+        <a class="navbar-brand" href="{{ route('dashboard') }}">Painel PETI</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPETI">
             <span class="navbar-toggler-icon"></span>

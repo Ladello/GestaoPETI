@@ -10,12 +10,18 @@ use App\Http\Controllers\ObjectiveController;
 use App\Http\Controllers\GoalController;
 use App\Http\Controllers\PrincipleController;
 use App\Http\Controllers\ArchitectureUploadController;
+use App\Http\Controllers\DashboardController;
+
 
 Route::middleware('auth')->group(function () {
 
     Route::get('/', function () {
-        return redirect()->route('projects.index');
+        return redirect()->route('dashboard');
     });
+
+    // dashboard principal
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
 
     // projects (crud)
     Route::resource('projects', ProjectController::class);

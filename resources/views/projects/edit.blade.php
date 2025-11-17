@@ -38,6 +38,18 @@
         </select>
     </div>
 
+    <div class="mb-3">
+        <label>Responsável</label>
+        <select name="owner_id" class="form-control">
+            <option value="">— nenhum —</option>
+            @foreach($users as $user)
+                <option value="{{ $user->id }}" {{ (old('owner_id', $project->owner_id) == $user->id) ? 'selected' : '' }}>
+                    {{ $user->name }}
+                </option>
+            @endforeach
+        </select>
+    </div>
+
     <button class="btn btn-success">Salvar</button>
     <a href="{{ route('projects.show', $project) }}" class="btn btn-secondary">Cancelar</a>
 </form>
