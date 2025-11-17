@@ -5,6 +5,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ActivityController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CanvasController;
+use App\Http\Controllers\ServiceController;
 
 Route::middleware('auth')->group(function () {
 
@@ -17,6 +18,9 @@ Route::middleware('auth')->group(function () {
 
     // activities (nested + shallow)
     Route::resource('projects.activities', ActivityController::class)->shallow();
+
+    // services (crud)
+    Route::resource('services', ServiceController::class);
 
     // canvas (crud)
     Route::resource('canvas', CanvasController::class)

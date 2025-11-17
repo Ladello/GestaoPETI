@@ -10,9 +10,8 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); // nome do serviço (modelo PETI: portfólio de serviços)
+            $table->string('name'); // nome do serviço 
             $table->text('description')->nullable();
-            $table->string('portal_url')->nullable();
             $table->string('sla')->nullable();
             $table->json('results_expected')->nullable(); // resultados de negócio requeridos pelos clientes
             $table->timestamps();

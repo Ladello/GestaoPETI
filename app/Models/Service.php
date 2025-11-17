@@ -12,7 +12,6 @@ class Service extends Model
     protected $fillable = [
         'name',
         'description',
-        'portal_url',
         'sla',
         'results_expected',
     ];

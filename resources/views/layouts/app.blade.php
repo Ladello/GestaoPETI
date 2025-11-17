@@ -18,24 +18,44 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container">
+
         <a class="navbar-brand" href="{{ route('projects.index') }}">Painel PETI</a>
 
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPETI">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarPETI">
+            <ul class="navbar-nav ms-auto align-items-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('projects.index') }}">Projetos</a>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('canvas.index') }}">Canvas</a>
                 </li>
+
                 <li class="nav-item">
-                    <span class="nav-link">Olá, {{ auth()->user()->name ?? 'Usuário' }}</span>
+                    <a class="nav-link" href="{{ route('services.index') }}">Serviços</a>
                 </li>
+
+                <li class="nav-item mx-2">
+                    <span class="navbar-text text-white-50">
+                        Olá, {{ auth()->user()->name ?? 'Usuário' }}
+                    </span>
+                </li>
+
                 <li class="nav-item">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button class="btn btn-link nav-link">Sair</button>
+                        <button class="btn btn-sm btn-outline-light">Sair</button>
                     </form>
                 </li>
+
             </ul>
         </div>
+
     </div>
 </nav>
 
