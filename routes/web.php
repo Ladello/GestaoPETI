@@ -8,6 +8,8 @@ use App\Http\Controllers\CanvasController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ObjectiveController;
 use App\Http\Controllers\GoalController;
+use App\Http\Controllers\PrincipleController;
+use App\Http\Controllers\ArchitectureUploadController;
 
 Route::middleware('auth')->group(function () {
 
@@ -30,6 +32,9 @@ Route::middleware('auth')->group(function () {
     // goals nested em objectives (shallow)
     Route::resource('objectives.goals', GoalController::class)->shallow();
 
+    // principles (crud)
+    Route::resource('principles', PrincipleController::class);
+
     // canvas (crud)
     Route::resource('canvas', CanvasController::class)
         ->only(['index','create','store','edit','update','destroy'])
@@ -47,6 +52,15 @@ Route::middleware('auth')->group(function () {
     Route::post('activities/{activity}/status', 
         [ActivityController::class, 'changeStatus']
     )->name('activities.changeStatus');
+
+    // uploads de arquitetura (crud)
+    Route::get('architecture', [ArchitectureUploadController::class, 'index'])->name('architecture.index');
+    Route::get('architecture/create', [ArchitectureUploadController::class, 'create'])->name('architecture.create');
+    Route::post('architecture', [ArchitectureUploadController::class, 'store'])->name('architecture.store');
+    Route::get('architecture/{architecture}', [ArchitectureUploadController::class, 'show'])->name('architecture.show');
+    Route::get('architecture/{architecture}/download', [ArchitectureUploadController::class, 'download'])->name('architecture.download');
+    Route::delete('architecture/{architecture}', [ArchitectureUploadController::class, 'destroy'])->name('architecture.destroy');
+
 });
 
 Route::get('/login', function () {
