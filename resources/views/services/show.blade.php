@@ -6,7 +6,7 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h2>{{ $service->name }}</h2>
     <div>
-        <a href="{{ route('services.edit', $service) }}" class="btn btn-warning btn-sm">Editar</a>
+        <a href="{{ route('services.edit', $service) }}" class="btn btn-primary btn-sm">Editar</a>
         <a href="{{ route('services.index') }}" class="btn btn-secondary btn-sm">Voltar</a>
     </div>
 </div>

@@ -7,8 +7,6 @@
 <p class="mb-3 text-muted">Edite os blocos do Canvas conforme o Modelo PETI.</p>
 
 <div class="mb-3 d-flex gap-2">
-    <a href="{{ route('canvas.create') }}" class="btn btn-sm btn-outline-primary">Criar bloco extra</a>
-
     <!-- botão exportar PDF -->
     <a href="{{ route('canvas.pdf') }}" class="btn btn-sm btn-outline-success" target="_blank">
         <i class="bi bi-download"></i> Exportar PDF
@@ -16,7 +14,7 @@
 </div>
 
 
-<div class="row g-3">
+<div class="row g-3 mt-3">
     @php
         // define a ordem visual 3x3 (linha por linha)
         $layout = [

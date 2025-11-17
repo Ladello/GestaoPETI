@@ -3,14 +3,17 @@
 @section('title', $project->title)
 
 @section('content')
-
-<h2>{{ $project->title }}</h2>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>{{ $project->title }}</h2>
+    <div>
+        <a href="{{ route('projects.edit', $project) }}" class="btn btn-primary btn-sm">Editar</a>
+        <a href="{{ route('projects.index') }}" class="btn btn-secondary btn-sm">Voltar</a>
+    </div>
+</div>
 
 <p><strong>Status:</strong> {{ $project->status }}</p>
 <p><strong>Prioridade:</strong> {{ $project->priority }}</p>
 <p><strong>Descrição:</strong><br>{{ $project->description }}</p>
-
-<a href="{{ route('projects.edit', $project) }}" class="btn btn-warning">Editar Projeto</a>
 
 <hr>
 
