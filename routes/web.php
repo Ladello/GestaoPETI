@@ -6,6 +6,8 @@ use App\Http\Controllers\ActivityController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CanvasController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ObjectiveController;
+use App\Http\Controllers\GoalController;
 
 Route::middleware('auth')->group(function () {
 
@@ -21,6 +23,12 @@ Route::middleware('auth')->group(function () {
 
     // services (crud)
     Route::resource('services', ServiceController::class);
+
+    // objectives (crud)
+    Route::resource('objectives', ObjectiveController::class);
+
+    // goals nested em objectives (shallow)
+    Route::resource('objectives.goals', GoalController::class)->shallow();
 
     // canvas (crud)
     Route::resource('canvas', CanvasController::class)

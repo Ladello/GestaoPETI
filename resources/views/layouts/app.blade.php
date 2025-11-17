@@ -40,6 +40,10 @@
                     <a class="nav-link" href="{{ route('services.index') }}">Serviços</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('objectives.index') }}">Objetivos</a>
+                </li>
+
                 <li class="nav-item mx-2">
                     <span class="navbar-text text-white-50">
                         Olá, {{ auth()->user()->name ?? 'Usuário' }}
