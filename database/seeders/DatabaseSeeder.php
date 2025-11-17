@@ -3,6 +3,14 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use Database\Seeders\ProjectSeeder;
+use Database\Seeders\ActivitySeeder;
+use Database\Seeders\ServiceSeeder;
+use Database\Seeders\ObjectiveSeeder;
+use Database\Seeders\GoalSeeder;
+use Database\Seeders\PrincipleSeeder;
+use Database\Seeders\CanvasSeeder;
+use Database\Seeders\ArchitectureUploadSeeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,11 +23,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // usuário padrão para testes
+        $user = User::first() ?? User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@adm.com',
+            'password' => bcrypt('senha123'),
+        ]);
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // seeders de domínio (até 3 exemplos por módulo)
+        $this->call([
+            ProjectSeeder::class,
+            ActivitySeeder::class,
+            ServiceSeeder::class,
+            ObjectiveSeeder::class,
+            GoalSeeder::class,
+            PrincipleSeeder::class,
+            CanvasSeeder::class,
+            ArchitectureUploadSeeder::class,
         ]);
     }
 }

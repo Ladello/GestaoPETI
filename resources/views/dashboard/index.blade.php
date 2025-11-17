@@ -5,35 +5,35 @@
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h2>Dashboard</h2>
-    <div class="text-end small text-muted">visão geral do PETI • {{ now()->format('d/m/Y H:i') }}</div>
+    <div class="text-end small text-muted">Visão geral do PETI • {{ now()->format('d/m/Y H:i') }}</div>
 </div>
 
 <div class="row g-3 mb-4">
   <div class="col-md-3">
     <div class="card p-3 h-100">
-      <div class="small text-muted">projetos</div>
+      <div class="small text-muted">Projetos</div>
       <h3 class="mb-0">{{ $totalProjects }}</h3>
     </div>
   </div>
 
   <div class="col-md-3">
     <div class="card p-3 h-100">
-      <div class="small text-muted">atividades</div>
+      <div class="small text-muted">Atividades</div>
       <h3 class="mb-0">{{ $totalActivities }}</h3>
-      <div class="small text-danger">{{ $overdueActivities }} atrasadas</div>
+      <div class="small text-danger">{{ $overdueActivities }} Atrasadas</div>
     </div>
   </div>
 
   <div class="col-md-3">
     <div class="card p-3 h-100">
-      <div class="small text-muted">serviços</div>
+      <div class="small text-muted">Serviços</div>
       <h3 class="mb-0">{{ $totalServices }}</h3>
     </div>
   </div>
 
   <div class="col-md-3">
     <div class="card p-3 h-100">
-      <div class="small text-muted">objetivos / metas</div>
+      <div class="small text-muted">Objetivos / Metas</div>
       <h3 class="mb-0">{{ $totalObjectives }} / {{ $totalGoals }}</h3>
     </div>
   </div>
@@ -44,7 +44,7 @@
     <div class="card p-3 h-100">
       <h5>projetos por status</h5>
       <canvas id="projectsStatusChart" height="200"></canvas>
-      <small class="text-muted">distribuição por status (dados atualizados em tempo real).</small>
+      <small class="text-muted">Distribuição por status (dados atualizados em tempo real).</small>
     </div>
   </div>
 
@@ -64,7 +64,7 @@
             </div>
           </li>
         @empty
-          <li class="list-group-item">nenhuma atividade recente.</li>
+          <li class="list-group-item">Nenhuma atividade recente.</li>
         @endforelse
       </ul>
     </div>
@@ -88,7 +88,7 @@
             </div>
           </li>
         @empty
-          <li class="list-group-item">nenhum projeto recente.</li>
+          <li class="list-group-item">Nenhum projeto recente.</li>
         @endforelse
       </ul>
     </div>
@@ -102,6 +102,7 @@
         <a href="{{ route('canvas.index') }}" class="btn btn-outline-secondary">Abrir Canvas</a>
         <a href="{{ route('services.index') }}" class="btn btn-outline-secondary">Serviços</a>
         <a href="{{ route('objectives.index') }}" class="btn btn-outline-secondary">Objetivos</a>
+        <a href="{{ route('principles.index') }}" class="btn btn-outline-secondary">Princípios</a>
         <a href="{{ route('architecture.index') }}" class="btn btn-outline-secondary">Arquitetura</a>
       </div>
     </div>
