@@ -260,13 +260,19 @@ Dependências principais:
 	php artisan storage:link
 	```
 
-8. Subir o servidor de desenvolvimento:
+ 8. Gerar chave para permitir acesso e conexão:
+
+	```bash
+	php artisan key:generate
+	```
+
+9. Subir o servidor de desenvolvimento:
 
 	```bash
 	php artisan serve
 	```
 
-8. Acessar no navegador:
+10. Acessar no navegador:
 
 	```text
 	http://localhost:8000
